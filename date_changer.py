@@ -1,6 +1,6 @@
 import re
-created_date = input("Введите дату создания заметки (в виде хх.хх.хххх): ")
-issue_date = input("Введите дату истечения заметки (в виде хх.хх.хххх): ")
+created_date = input("Введите дату создания заметки (в порядке день-месяц-год): ")
+issue_date = input("Введите дату истечения заметки (в порядке день-месяц-год): ")
 
 temp_created_date = re.split(r'[,.\n? -]+', created_date)
 temp_issue_date = re.split(r'[,.\n? -]+', issue_date)
