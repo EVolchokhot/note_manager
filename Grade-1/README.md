@@ -1,4 +1,4 @@
-## Grade - 1
+## Этап - 1
 ### Задание 1: Основные переменные
 Файл [greetings.py](https://github.com/EVolchok-off/Note_manager/blob/main/greetings.py)
 представляет из себя код, который содержит в себе переменные (username, title, content, status, created_date, issue_date), и выводит их содержание с помощью команды print()
