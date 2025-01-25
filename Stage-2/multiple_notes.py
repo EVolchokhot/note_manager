@@ -13,31 +13,29 @@ def new_note():
     notes.append(note)
     return
 
+# Вывод всех заметок
+def all_notes():
+    print("Все ваши заметки:\n↓↓↓-↓↓↓-↓↓↓-↓↓↓-↓↓↓\n ")
+    for i in notes:
+        for j, k in i.items():
+            print(f"{j}: {k}")
+        print()
+
+
 # Первая заметка пользователя
 print('Добро пожаловать в "Менеджер заметок"! Вы можете добавить новую заметку.')
-# new_note()
+new_note()
 
 # Цикл с вопросом добавить ли еще заметку
 while True:
-    answ = input("Хотите добавить ещё одну заметку? (да/нет): ")
+    all_notes()
+    answ = input("Хотите добавить ещё одну заметку или удалить последнюю? (да/нет/удалить): ")
     if answ == "да":
         new_note()
-        answ = input("Хотите удалить добавленную заметку? (да/нет): ")
-        if answ == "да":
-            notes.pop(-1)
-        elif answ == "нет":
-            while True:
-                answ = input("Хотите переписать добавленную заметку? (да/нет): ")
-                if answ == "да":
-                    notes.pop(-1)
-                    new_note()
-                elif answ == "нет": break
-                else: print("Введите ответ корректно!")
-    elif answ == "нет": break
+    elif answ == "удалить":
+        notes.pop(-1)
+    elif answ == "нет":
+        all_notes()
+        break
     else: print("Введите ответ корректно!")
 
-# Вывод всех заметок
-for i in notes:
-    for j, k in i.items():
-        print(f"{j}: {k}")
-    print()
